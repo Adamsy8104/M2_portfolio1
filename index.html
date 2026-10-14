@@ -15,52 +15,66 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="mainNav">
+    <div class="container">
 
-<div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand fw-bold" href="#home">
+            M2<span class="text-primary">.</span>
+        </a>
 
-<a class="navbar-brand" href="#">M2</a>
+        <!-- Mobile menu button -->
+        <button
+            class="navbar-toggler custom-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
 
-<button class="navbar-toggler"
-type="button"
-data-bs-toggle="collapse"
-data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-<span class="navbar-toggler-icon"></span>
+        <!-- Navigation links -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
 
-</button>
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
 
-<div class="collapse navbar-collapse" id="navbarNav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
 
-<ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
 
-<li class="nav-item">
-<a class="nav-link" href="#home">Home</a>
-</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
 
-<li class="nav-item">
-<a class="nav-link" href="#about">About</a>
-</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
 
-<li class="nav-item">
-<a class="nav-link" href="#skills">Skills</a>
-</li>
+                <li class="nav-item ms-lg-3">
+                    <button
+                        id="darkModeBtn"
+                        class="btn btn-outline-light btn-sm theme-btn"
+                        type="button">
+                        🌙 Dark Mode
+                    </button>
+                </li>
 
-<li class="nav-item">
-<a class="nav-link" href="#projects">Projects</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#contact">Contact</a>
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
+            </ul>
+        </div>
+    </div>
 </nav>
+
+  <div class="navbar-backdrop" id="navbarBackdrop"></div>
 
 <section id="home" class="hero">
 
@@ -79,10 +93,10 @@ Frontend Developer
 
 </p>
 
-<a href="#" class="btn btn-primary">
-
-Download CV
-
+<a href="documents/Adamu-Murtala-CV.pdf"
+   class="btn btn-primary"
+   download>
+    Download CV
 </a>
 
 <a href="#contact"
@@ -246,9 +260,12 @@ My goal is to become a remote software engineer and earn a fully funded internat
 
                     <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
 
-                    <a href="#" class="btn btn-success">
-                        View Project
-                    </a>
+                    <a href="projects/calculator/index.html"
+   class="btn btn-success"
+   target="_blank"
+   rel="noopener noreferrer">
+    View Calculator
+</a>
                 </div>
             </div>
         </div>
@@ -343,67 +360,55 @@ My goal is to become a remote software engineer and earn a fully funded internat
 
                 <h3>Send Me a Message</h3>
 
-                <form id="contactForm">
+                <form id="contactForm"
+      action="https://formspree.io/f/meaernwb"
+      method="POST">
 
-                    <div class="mb-3">
-                        <label for="fullname" class="form-label">
-                            Full Name
-                        </label>
+    <div class="mb-3">
+        <label for="fullname" class="form-label">Full Name</label>
+        <input
+            type="text"
+            class="form-control"
+            id="fullname"
+            name="fullname"
+            required>
+    </div>
 
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="fullname"
-                            required>
-                    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required>
+    </div>
 
-                    <div class="mb-3">
-                        <label for="email" class="form-label">
-                            Email Address
-                        </label>
+    <div class="mb-3">
+        <label for="subject" class="form-label">Subject</label>
+        <input
+            type="text"
+            class="form-control"
+            id="subject"
+            name="subject"
+            required>
+    </div>
 
-                        <input
-                            type="email"
-                            class="form-control"
-                            id="email"
-                            required>
-                    </div>
+    <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea
+            class="form-control"
+            id="message"
+            name="message"
+            rows="6"
+            required></textarea>
+    </div>
 
-                    <div class="mb-3">
-                        <label for="subject" class="form-label">
-                            Subject
-                        </label>
+    <button type="submit" class="btn btn-primary w-100">
+        Send Message
+    </button>
 
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="subject"
-                            required>
-                    </div>
-
-                    <div class="mb-3">
-
-                        <label for="message" class="form-label">
-                            Message
-                        </label>
-
-                        <textarea
-                            class="form-control"
-                            id="message"
-                            rows="6"
-                            required></textarea>
-
-                    </div>
-
-                    <button
-                        type="submit"
-                        class="btn btn-primary w-100">
-
-                        Send Message
-
-                    </button>
-
-                </form>
+</form>
 
             </div>
 
@@ -422,19 +427,21 @@ My goal is to become a remote software engineer and earn a fully funded internat
 
         <div class="social-links">
 
-            <a href="https://github.com/yourusername" target="_blank">
-                GitHub
-            </a>
-
-            <a href="https://linkedin.com/in/yourusername" target="_blank">
+            <a href="https://github.com/Adamsy8104"
+   class="btn btn-primary"
+   target="_blank"
+   rel="noopener noreferrer">
+    GitHub
+  </a>
+          <a href="#" target="_blank">
                 LinkedIn
-            </a>
+          </a>
 
             <a href="mailto:adamumuhammadmurtala054@gmail.com">
                 Email
             </a>
 
-            <a href="https://wa.me/2347044257508" target="_blank">
+            <a href="https://wa.me/2349049134060" target="_blank">
                 WhatsApp
             </a>
 
@@ -454,7 +461,8 @@ My goal is to become a remote software engineer and earn a fully funded internat
     </div>
 
 </footer>
-<script src="js/bootstrap.bundle.min.js"></script>
-
+<script src="js/bootstrap.bundle.min.js"></script>  
 <script src="js/script.js"></script>
-</body>
+
+  </body>
+  </html>

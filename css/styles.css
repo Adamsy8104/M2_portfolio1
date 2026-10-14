@@ -1,172 +1,591 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-body{
-    font-family:Arial, sans-serif;
-    background:#f4f7fc;
+/* =========================================
+   1. GLOBAL SETTINGS
+========================================= */
+
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --hero-start: #0d6efd;
+    --hero-end: #001f54;
+
+    --background: #f8fafc;
+    --surface: #ffffff;
+    --surface-alt: #eef4ff;
+
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+
+    --navbar-bg: #111827;
+    --footer-bg: #001f54;
+
+    --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    --radius: 16px;
 }
 
-.hero{
-    background:linear-gradient(135deg,#0d6efd,#001f54);
-    color:white;
-    padding:100px 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.profile-image{
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    border:5px solid white;
-    margin-bottom:20px;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
 }
 
-.hero .btn{
-    margin:10px;
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    background: var(--background);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-section{
-    padding:60px 20px;
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-h2{
-    color:#0d3b66;
-    margin-bottom:20px;
-}
-.skill-card{
-    background:#fff;
-    padding:30px;
-    text-align:center;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
-    transition:.4s;
-    height:100%;
+a {
+    transition: color 0.25s ease, background-color 0.25s ease;
 }
 
-.skill-card:hover{
-    background:#0d6efd;
-    color:white;
-    transform:translateY(-10px);
+section {
+    padding: 70px 20px;
 }
 
-.skill-card h3{
-    margin-bottom:15px;
-}
-#education{
-    background:#f8f9fa;
-    border-radius:15px;
-}
-
-#education h2{
-    color:#0d6efd;
-    font-weight:bold;
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+    font-weight: 700;
 }
 
-table{
-    background:white;
-}
-#projects{
-    background:#eef4ff;
+h2 {
+    margin-bottom: 25px;
+    color: #0d3b66;
 }
 
-#projects h2{
-    color:#0d6efd;
-    font-weight:bold;
+/* =========================================
+   2. HERO SECTION
+========================================= */
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        var(--hero-start),
+        var(--hero-end)
+    );
+    color: #ffffff;
+    padding: 100px 20px;
 }
 
-.card{
-    transition:.4s;
-    border:none;
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
-.card:hover{
-    transform:translateY(-10px);
+.hero p {
+    font-size: 1.1rem;
 }
 
-.card-title{
-    color:#0d6efd;
-}
-#contact{
-    background:#f8f9fa;
-    border-radius:15px;
+.hero .btn {
+    margin: 8px;
+    border-radius: 10px;
 }
 
-#contact h2{
-    color:#0d6efd;
+.profile-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    margin: 0 auto 20px;
 }
 
-#contact form{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
-}
-#contact{
-    background:#eef4ff;
+/* =========================================
+   3. SKILLS
+========================================= */
+
+.skill-card {
+    height: 100%;
+    padding: 30px;
+    text-align: center;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.contact-card{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
-    height:100%;
+.skill-card h3 {
+    margin-bottom: 15px;
 }
 
-.contact-card h3{
-    color:#0d6efd;
-    margin-bottom:20px;
+.skill-card:hover {
+    background: var(--primary);
+    color: #ffffff;
+    transform: translateY(-6px);
 }
 
-.contact-card a{
-    text-decoration:none;
+/* =========================================
+   4. EDUCATION
+========================================= */
+
+#education {
+    background: var(--surface);
+    border-radius: var(--radius);
 }
 
-.contact-card p{
-    line-height:1.8;
+#education h2 {
+    color: var(--primary);
 }
 
-.contact-card:hover{
-    transform:translateY(-5px);
-    transition:.4s;
-}
-.footer{
-    background:#001f54;
-    color:white;
-    text-align:center;
-    padding:40px 20px;
+#education table {
+    background: var(--surface);
+    color: var(--text);
 }
 
-.footer h3{
-    margin-bottom:10px;
+#education th,
+#education td {
+    padding: 12px;
+    border-color: var(--border);
 }
 
-.footer p{
-    margin:10px 0;
+/* =========================================
+   5. PROJECTS
+========================================= */
+
+#projects {
+    background: var(--surface-alt);
 }
 
-.social-links{
-    margin:20px 0;
+#projects h2 {
+    color: var(--primary);
 }
 
-.social-links a{
-    color:white;
-    text-decoration:none;
-    margin:0 10px;
-    font-weight:bold;
+.card {
+    height: 100%;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.social-links a:hover{
-    color:#ffc107;
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
 }
 
-#topBtn{
-    margin-top:20px;
+.card-title {
+    color: var(--primary);
 }
-html{
-    scroll-behavior:smooth;
+
+/* =========================================
+   6. CONTACT
+========================================= */
+
+#contact {
+    background: var(--surface-alt);
+    border-radius: var(--radius);
 }
-img{
-    max-width:100%;
+
+#contact h2 {
+    color: var(--primary);
+}
+
+#contact form {
+    padding: 25px;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.contact-card {
+    height: 100%;
+    padding: 30px;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-card h3 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.contact-card p {
+    line-height: 1.8;
+}
+
+.contact-card a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
+
+/* Form controls */
+
+#contact input,
+#contact textarea,
+#contact select {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    background: var(--surface);
+    color: var(--text);
+}
+
+#contact input:focus,
+#contact textarea:focus,
+#contact select:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+}
+
+/* =========================================
+   7. FOOTER
+========================================= */
+
+.footer {
+    padding: 40px 20px;
+    background: var(--footer-bg);
+    color: #ffffff;
+    text-align: center;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    margin: 10px 0;
+}
+
+.social-links {
+    margin: 20px 0;
+}
+
+.social-links a {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 6px 10px;
+    font-weight: 600;
+}
+
+.social-links a:hover {
+    color: #fbbf24;
+}
+
+#topBtn {
+    margin-top: 20px;
+}
+
+/* =========================================
+   8. PROFESSIONAL NAVBAR
+========================================= */
+
+#mainNav {
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+    padding: 14px 0;
+    background: var(--navbar-bg) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+#mainNav .navbar-brand {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+#mainNav .navbar-brand span {
+    color: #60a5fa;
+}
+
+#mainNav .nav-link {
+    color: #d1d5db;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 9px;
+}
+
+#mainNav .nav-link:hover,
+#mainNav .nav-link:focus {
+    color: #ffffff;
+    background: var(--primary);
+}
+
+#mainNav .navbar-toggler {
+    padding: 9px 12px;
+    border: 1px solid #64748b;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+#mainNav .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
+}
+
+/* Mobile dropdown */
+
+@media (max-width: 991.98px) {
+    #mainNav .navbar-collapse {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 12px;
+        left: auto;
+
+        width: min(280px, calc(100vw - 24px));
+        max-height: 70vh;
+        overflow-y: auto;
+
+        padding: 14px;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px 5px 16px 16px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    #mainNav .navbar-nav {
+        align-items: stretch !important;
+        gap: 4px;
+    }
+
+    #mainNav .nav-link {
+        color: #1e293b;
+        padding: 11px 13px;
+    }
+
+    #mainNav .nav-link:hover,
+    #mainNav .nav-link:focus {
+        color: #ffffff;
+        background: var(--primary);
+    }
+
+    #mainNav #darkModeBtn {
+        width: 100%;
+        margin-top: 8px;
+        padding: 10px;
+        color: var(--primary);
+        border-color: var(--primary);
+        border-radius: 10px;
+    }
+
+    #mainNav #darkModeBtn:hover {
+        color: #ffffff;
+        background: var(--primary);
+    }
+}
+
+/* Desktop navigation */
+
+@media (min-width: 992px) {
+    #mainNav .navbar-collapse {
+        position: static;
+        width: auto;
+        max-height: none;
+        padding: 0;
+        overflow: visible;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    #mainNav .navbar-toggler {
+        display: none;
+    }
+}
+
+/* =========================================
+   9. BACKDROP
+========================================= */
+
+.navbar-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1040;
+    background: rgba(15, 23, 42, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.navbar-backdrop.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* =========================================
+   10. DARK MODE
+========================================= */
+
+body.dark-mode {
+    --background: #0b1220;
+    --surface: #172033;
+    --surface-alt: #111827;
+    --text: #e5e7eb;
+    --muted: #a8b3c7;
+    --border: #334155;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+/* Section backgrounds */
+
+body.dark-mode #education,
+body.dark-mode #projects,
+body.dark-mode #contact {
+    background: var(--surface-alt);
+    color: var(--text);
+}
+
+/* Headings */
+
+body.dark-mode h2,
+body.dark-mode #education h2,
+body.dark-mode #projects h2,
+body.dark-mode #contact h2 {
+    color: #93c5fd;
+}
+
+/* Cards */
+
+body.dark-mode .card,
+body.dark-mode .skill-card,
+body.dark-mode .contact-card,
+body.dark-mode #contact form {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+body.dark-mode .card-title,
+body.dark-mode .contact-card h3 {
+    color: #93c5fd;
+}
+
+/* Tables */
+
+body.dark-mode #education table,
+body.dark-mode #education th,
+body.dark-mode #education td {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+/* Form fields */
+
+body.dark-mode #contact input,
+body.dark-mode #contact textarea,
+body.dark-mode #contact select {
+    background: #0b1220;
+    color: #f8fafc;
+    border-color: #475569;
+}
+
+body.dark-mode #contact input::placeholder,
+body.dark-mode #contact textarea::placeholder {
+    color: #a8b3c7;
+}
+
+/* Links and muted text */
+
+body.dark-mode .contact-card a {
+    color: #93c5fd;
+}
+
+body.dark-mode .text-muted {
+    color: #cbd5e1 !important;
+}
+
+/* Keep the mobile dropdown readable in dark mode */
+
+body.dark-mode #mainNav .navbar-collapse {
+    background: #172033;
+    border-color: #334155;
+}
+
+body.dark-mode #mainNav .nav-link {
+    color: #e5e7eb;
+}
+
+body.dark-mode #mainNav .nav-link:hover,
+body.dark-mode #mainNav .nav-link:focus {
+    color: #ffffff;
+    background: #2563eb;
+}
+
+body.dark-mode #mainNav #darkModeBtn {
+    color: #93c5fd;
+    border-color: #64748b;
+}
+
+/* =========================================
+   11. RESPONSIVE AND ACCESSIBILITY
+========================================= */
+
+@media (max-width: 768px) {
+    section {
+        padding: 45px 18px;
+    }
+
+    .hero {
+        padding: 70px 18px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .profile-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .contact-card,
+    #contact form {
+        padding: 20px;
+    }
+
+    #education table {
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
 }
